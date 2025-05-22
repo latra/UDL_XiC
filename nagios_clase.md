@@ -41,6 +41,16 @@ sudo apt update
 sudo apt install snmp snmp-mibs-downloader -y
 ```
 
+En debian se debe abrir el siguiente documento:
+```sh
+sudo nano /etc/apt/sources.list
+```
+Y añadir estas 2 lineas:
+```sh
+deb http://deb.debian.org/debian/ bookworm main contrib non-free
+deb-src http://deb.debian.org/debian/ bookworm main contrib non-free
+```
+
 4. Probamos la conectividad SNMP desde el MANAGER:
 ```sh
 snmpwalk -v2c -c public <IP_AGENT> system
